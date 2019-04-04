@@ -21,7 +21,7 @@ RUN apt-get install -y default-jre
 
 # Install FastQC
 # Ref: http://www.bioinformatics.babraham.ac.uk/projects/fastqc/INSTALL.txt
-RUN wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.5.zip
+RUN wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.8.zip
 RUN unzip fastqc_v0.11.5.zip
 RUN mv FastQC/ /opt/
 RUN chmod +x /opt/FastQC/fastqc
