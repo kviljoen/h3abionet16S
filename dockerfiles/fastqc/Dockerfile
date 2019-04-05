@@ -7,23 +7,13 @@
 FROM ubuntu:16.04
 
 # File Author / Maintainer
-MAINTAINER Katie Lennard "katieviljoen@gmail.com"
+MAINTAINER Gerrit Botha "gerrit.botha@uct.ac.za"
 
 WORKDIR /root
 
 ################## BEGIN INSTALLATION ######################
 # Install Basic tools
-RUN apt-get update && apt-get install -y \
-aufs-tools \
-automake \
-build-essential \
-cmake \
-wget \
-unzip \
-libfindbin-libs-perl \
-python-dev \
-python-setuptools \
-git
+RUN apt-get update && apt-get install -y wget unzip libfindbin-libs-perl
 
 # Install Java 8
 # Ref: https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
@@ -37,12 +27,10 @@ RUN mv FastQC/ /opt/
 RUN chmod +x /opt/FastQC/fastqc
 RUN ln -s /opt/FastQC/fastqc /usr/local/bin/fastqc
 
-# Install MultiQC
-RUN git clone https://github.com/ewels/MultiQC.git && \
-cd MultiQC && \
-python setup.py install && \
-cd / && \
-rm -rf MultiQC 
+# Install MultQC
+RUN apt-get install -y python-pip
+RUN pip install --upgrade pip
+RUN pip install multiqc
 
 ################## Hex specific ###########################
 RUN mkdir -p /researchdata/fhgfs
