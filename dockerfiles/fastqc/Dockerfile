@@ -21,7 +21,7 @@ cmake \
 wget \
 unzip \
 libfindbin-libs-perl \
-python \
+python-dev \
 python-setuptools \
 git
 
