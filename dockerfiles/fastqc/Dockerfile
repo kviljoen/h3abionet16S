@@ -13,7 +13,7 @@ WORKDIR /root
 
 ################## BEGIN INSTALLATION ######################
 # Install Basic tools
-RUN apt-get update && apt-get install -y wget unzip libfindbin-libs-perl
+RUN apt-get update && apt-get install -y wget unzip libfindbin-libs-perl git
 
 # Install Java 8
 # Ref: https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
@@ -27,10 +27,10 @@ RUN mv FastQC/ /opt/
 RUN chmod +x /opt/FastQC/fastqc
 RUN ln -s /opt/FastQC/fastqc /usr/local/bin/fastqc
 
-# Install MultQC
-RUN apt-get install -y python-pip
-RUN pip install --upgrade pip
-RUN pip install multiqc
+# Install MultiQC
+git clone https://github.com/ewels/MultiQC.git
+cd MultiQC
+python setup.py install
 
 ################## Hex specific ###########################
 RUN mkdir -p /researchdata/fhgfs
