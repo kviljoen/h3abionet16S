@@ -32,9 +32,11 @@ RUN chmod +x /opt/FastQC/fastqc
 RUN ln -s /opt/FastQC/fastqc /usr/local/bin/fastqc
 
 # Install MultiQC
-RUN git clone https://github.com/ewels/MultiQC.git
-cd MultiQC
-python setup.py install
+RUN git clone https://github.com/ewels/MultiQC.git && \
+cd MultiQC && \
+python setup.py install && \
+cd / && \
+rm -rf MultiQC 
 
 ################## Hex specific ###########################
 RUN mkdir -p /researchdata/fhgfs
