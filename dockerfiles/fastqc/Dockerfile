@@ -7,13 +7,17 @@
 FROM ubuntu:16.04
 
 # File Author / Maintainer
-MAINTAINER Gerrit Botha "gerrit.botha@uct.ac.za"
+MAINTAINER Katie Lennard "katieviljoen@gmail.com"
 
 WORKDIR /root
 
 ################## BEGIN INSTALLATION ######################
 # Install Basic tools
 RUN apt-get update && apt-get install -y \
+aufs-tools \
+automake \
+build-essential \
+cmake \
 wget \
 unzip \
 libfindbin-libs-perl \
