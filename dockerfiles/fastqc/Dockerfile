@@ -18,6 +18,7 @@ wget \
 unzip \
 libfindbin-libs-perl \
 python \
+python-setuptools \
 git
 
 # Install Java 8
