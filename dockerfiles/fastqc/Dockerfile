@@ -32,7 +32,7 @@ RUN chmod +x /opt/FastQC/fastqc
 RUN ln -s /opt/FastQC/fastqc /usr/local/bin/fastqc
 
 # Install MultiQC
-git clone https://github.com/ewels/MultiQC.git
+RUN git clone https://github.com/ewels/MultiQC.git
 cd MultiQC
 python setup.py install
 
