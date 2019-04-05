@@ -13,7 +13,11 @@ WORKDIR /root
 
 ################## BEGIN INSTALLATION ######################
 # Install Basic tools
-RUN apt-get update && apt-get install -y wget unzip libfindbin-libs-perl git
+RUN apt-get update && apt-get install -y \
+wget \
+unzip \
+libfindbin-libs-perl \
+git
 
 # Install Java 8
 # Ref: https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
