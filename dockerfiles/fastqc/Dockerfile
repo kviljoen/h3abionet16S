@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
 wget \
 unzip \
 libfindbin-libs-perl \
+python \
 git
 
 # Install Java 8
